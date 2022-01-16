@@ -1,6 +1,6 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
-import { devToolsEnhancer } from 'redux-devtools-extension';
+import {devToolsEnhancer} from 'redux-devtools-extension';
 import rootReducer from './reducers';
 import api from '../api';
 
