@@ -8,7 +8,7 @@ export const loadRestaurants = () => (dispatch, getState, api) => {
     });
 };
 
-const startLoading = () => ({ type: START_LOADING });
+const startLoading = () => ({type: START_LOADING});
 
 // action creator
 const storeRestaurants = records => ({

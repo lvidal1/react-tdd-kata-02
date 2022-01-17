@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { loadRestaurants } from '../store/restaurants/actions';
+import {loadRestaurants} from '../store/restaurants/actions';
 
-export const RestaurantList = ({ loadRestaurants, restaurants, loading }) => {
+export const RestaurantList = ({loadRestaurants, restaurants, loading}) => {
     useEffect(() => {
         loadRestaurants();
     }, [loadRestaurants]);
@@ -26,7 +26,7 @@ export const RestaurantList = ({ loadRestaurants, restaurants, loading }) => {
     );
 };
 
-const mapDispatchToProps = { loadRestaurants };
+const mapDispatchToProps = {loadRestaurants};
 
 const mapStateToProps = state => ({
     restaurants: state.restaurants.records,

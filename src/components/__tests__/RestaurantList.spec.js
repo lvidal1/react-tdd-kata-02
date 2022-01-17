@@ -1,10 +1,10 @@
-import { render } from '@testing-library/react';
-import { RestaurantList } from '../RestaurantList';
+import {render} from '@testing-library/react';
+import {RestaurantList} from '../RestaurantList';
 
 describe('RestaurantList', () => {
     const restaurants = [
-        { id: 1, name: 'Sushi Place' },
-        { id: 2, name: 'Pizza Place' },
+        {id: 1, name: 'Sushi Place'},
+        {id: 2, name: 'Pizza Place'},
     ];
     let loadRestaurants;
     let context;
@@ -28,35 +28,28 @@ describe('RestaurantList', () => {
     });
 
     it('displays the loading indicator while loading', () => {
-        renderWithProps({ loading: true });
-        const { queryByTestId } = context;
+        renderWithProps({loading: true});
+        const {queryByTestId} = context;
 
         expect(queryByTestId('loading-indicator')).not.toBeNull();
     });
 
     describe('when loading succeeds', () => {
-
         beforeEach(() => {
             renderWithProps();
         });
         //...
         it('does not display the loading indicator while not loading', () => {
-
-            const { queryByTestId } = context;
+            const {queryByTestId} = context;
 
             expect(queryByTestId('loading-indicator')).toBeNull();
-        })
+        });
 
         it('displays the restaurants', () => {
-
-            const { queryByText } = context;
+            const {queryByText} = context;
 
             expect(queryByText('Sushi Place')).not.toBeNull();
             expect(queryByText('Pizza Place')).not.toBeNull();
         });
-
     });
-
 });
-
-

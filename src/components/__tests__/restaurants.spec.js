@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware } from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import restaurantsReducer from '../../store/restaurants/reducers';
-import { loadRestaurants } from '../../store/restaurants/actions';
+import {loadRestaurants} from '../../store/restaurants/actions';
 
 describe('restaurants', () => {
     describe('initially', () => {
@@ -19,8 +19,8 @@ describe('restaurants', () => {
     });
     describe('when loading succeeds', () => {
         const records = [
-            { id: 1, name: 'Sushi Place' },
-            { id: 2, name: 'Pizza Place' },
+            {id: 1, name: 'Sushi Place'},
+            {id: 2, name: 'Pizza Place'},
         ];
 
         let store;
@@ -44,7 +44,6 @@ describe('restaurants', () => {
         });
 
         it('stores the restaurants', () => {
-
             expect(store.getState().records).toEqual(records);
         });
 
@@ -55,7 +54,7 @@ describe('restaurants', () => {
     describe('while loading', () => {
         it('sets a loading flag', () => {
             const api = {
-                loadRestaurants: () => new Promise(() => { }),
+                loadRestaurants: () => new Promise(() => {}),
             };
 
             const initialState = {};
